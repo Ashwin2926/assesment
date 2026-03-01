@@ -3,6 +3,6 @@
   "compilerOptions": {
     "types": ["jest"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "src/services/echo.js", "src/services/api.js"],
+  "include": ["**/*.ts", "**/*.tsx", "src/services/echo.js", "src/services/api.js", "App.jsx", "src/hooks/useTowingRequestEvents.js"],
   "exclude": ["**/node_modules", "**/Pods"]
 }

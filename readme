@@ -20,6 +20,11 @@ Pusher Configuration:
 
 Create a free account at Pusher.com.
 
+app_id = "2121851"
+key = "a634f54f94dbb9d6d523"
+secret = "e39d9faccd10c606a0d6"
+cluster = "ap2"
+
 Get your App ID, Key, Secret, and Cluster.
 
 In your .env file, set BROADCAST_DRIVER=pusher and QUEUE_CONNECTION=database.
@@ -81,7 +86,7 @@ Run npm start to open the Metro Bundler.
 Press a for Android or i for iOS (requires an emulator or a connected device on the same Wi-Fi).
 
 4. How to Test
-Login as Customer on the Web App (customer@test.com / password123).
+Login as Customer on the Web App (ashwin@test.com / password123).
 
 Login as Driver on the Mobile App (driver@test.com / password123).
 
