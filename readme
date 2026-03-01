@@ -1,0 +1,94 @@
+Tareeqk - Setup and Run Guide
+Follow these steps to get the car recovery system running on your local machine.
+
+1. Backend Setup (Laravel)
+Open your terminal and go to the LARAVEL_BACKEND folder.
+
+Install dependencies: Run composer install.
+
+Create environment file: Copy .env.example to a new file named .env.
+
+Generate security key: Run php artisan key:generate.
+
+Database Configuration:
+
+Create a MySQL database named tareeqk.
+
+In your .env file, update DB_DATABASE, DB_USERNAME, and DB_PASSWORD.
+
+Pusher Configuration:
+
+Create a free account at Pusher.com.
+
+Get your App ID, Key, Secret, and Cluster.
+
+In your .env file, set BROADCAST_DRIVER=pusher and QUEUE_CONNECTION=database.
+
+Paste your Pusher details into the PUSHER_ fields.
+
+Run Migrations: Run php artisan migrate.
+
+Create Test Users:
+
+Run php artisan tinker.
+
+Paste the user creation code from the documentation to create a customer and a driver.
+
+Start the Server: Run php artisan serve --host=0.0.0.0.
+
+Start the Queue (Important): Open a new terminal in the same folder and run php artisan queue:work.
+
+2. Web App Setup (Customer)
+Open a new terminal and go to the REACT_WEB_APP folder.
+
+Install dependencies: Run npm install.
+
+Create environment file: Copy .env.example to .env.
+
+Configure API:
+
+Set REACT_APP_BACKEND_URL to http://localhost:8000.
+
+Add your Pusher Key and Cluster.
+
+Run the App: Run npm start. The app will open at http://localhost:3000.
+
+3. Mobile App Setup (Driver)
+Open a new terminal and go to the REACT_NATIVE_DRIVER_APP folder.
+
+Install dependencies: Run npm install.
+
+Find your Local IP:
+
+Windows: Run ipconfig in CMD.
+
+Mac: Run ifconfig in Terminal.
+
+Look for the IPv4 Address (e.g., 192.168.1.5).
+
+Create environment file: Copy .env.example to .env.
+
+Configure API:
+
+Set REACT_APP_BACKEND_URL to http://YOUR_LOCAL_IP:8000.
+
+Add your Pusher Key and Cluster.
+
+Start the App:
+
+Run npm start to open the Metro Bundler.
+
+Press a for Android or i for iOS (requires an emulator or a connected device on the same Wi-Fi).
+
+4. How to Test
+Login as Customer on the Web App (customer@test.com / password123).
+
+Login as Driver on the Mobile App (driver@test.com / password123).
+
+Create a Request on the Web App.
+
+Check the Mobile App: The request should appear instantly without refreshing.
+
+Accept the Request on the Mobile App and watch the Web App update automatically.
+
+Would you like me to help you troubleshoot any specific connection issues?
